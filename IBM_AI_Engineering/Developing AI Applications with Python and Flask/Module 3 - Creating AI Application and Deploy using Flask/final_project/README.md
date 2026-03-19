@@ -1,8 +1,8 @@
-# Репозиторий с итоговым проектом по курсу.
+### Репозиторий с итоговым проектом по курсу.
 
 Задание приведено ниже:
 
-::page{title="Final Project: AI-Based Web Application Development and Deployment"}
+## AI-Based Web Application Development and Deployment
 
 ## Scenario
 
@@ -33,7 +33,7 @@ For the completion of this project, you\'ll have to complete the following 8 tas
 
 Let\'s get started!
 
-::page{title="Note:"}
+**Note:**
 
 1. Please ensure that all updates and changes made during each task are properly completed and saved before proceeding to the next steps.  
 
@@ -51,7 +51,6 @@ Let\'s get started!
    
 5. Please run this lab in the **Skills Network Theia Lab environment** itself, not in your local IDE (like VS Code). The API used here is hosted on the Skills Network platform and is only accessible within the Theia Lab.*
 
- ##
 
 # Task 1: Fork and Clone the project repository
  
@@ -59,16 +58,11 @@ The GitHub repository of the project is available on the URL mentioned below.
 As a first step you need to Fork this repository, click the Fork button at the top-right corner of the repository page.
 	
 
-```bash
-https://github.com/ibm-developer-skills-network/oaqjp-final-project-emb-ai.git
-```
-*You can find instructions on how to fork the repository by visiting exercise 2 at the following [link](https://cf-courses-data.static.labs.skills.network/9Yqz09lYagTH_Eo5c9BXqQ/Get%20familiar%20with%20Git%20Commands-v1.md.html).*
-
 `Note:`Ensure your forked repository is Public.This action will create a copy of the forked repository within your GitHub account.
 1. Open a new Terminal and make the directory `final_project` using mkdir command.
 
 2. Clone this forked GitHub repository using the Cloud IDE terminal to your project to a folder named `final_project`.
-*You can find instructions on how to get the clone URL of the repository by visiting exercise 3 at the following [link](https://cf-courses-data.static.labs.skills.network/9Yqz09lYagTH_Eo5c9BXqQ/Get%20familiar%20with%20Git%20Commands-v1.md.html).*
+
 3. After the cloning is complete, use the terminal to change the current directory `final_project`.
 
 4. Go to your forked repository and open the README.md and add the project name in the file as `Final project`. Ensure you use this exact name as this is required for the AI-graded submission.
@@ -79,7 +73,7 @@ https://github.com/ibm-developer-skills-network/oaqjp-final-project-emb-ai.git
 
    **For Option 2 -Peer-Graded Submission and Evaluation**: Take the **screenshot** of your folder structure and save it as `1_folder_structure.png` for Peer Assignment.
 
-::page{title="Task 2: Create an emotion detection application using the Watson NLP library"}
+# Task 2: Create an emotion detection application using the Watson NLP library
 
 The Watson NLP libraries are embedded. Therefore, there is no need of importing them to your code. You only need to send a post request to the correct function in the library and receive the output.
 
@@ -124,11 +118,9 @@ Note: In case the python shell shows an error `ModuleNotFoundError: No module na
 ```
 python3 -m pip install requests
 ```
-**Optional:**
 
-At any point of time if you want to push your code to your forked GitHub repository, you can do so by following the instructions provided in this [link](https://cf-courses-data.static.labs.skills.network/9Yqz09lYagTH_Eo5c9BXqQ/Get%20familiar%20with%20Git%20Commands-v1.md.html).
 
-::page{title="Task 3: Format the output of the application"}
+# Task 3: Format the output of the application"}
 
 1. Convert the response text into a dictionary using the `json` library functions. 
 
@@ -169,11 +161,7 @@ At any point of time if you want to push your code to your forked GitHub reposit
      **For Option 2 -Peer-Graded Submission and Evaluation**: Take a **screenshot** of the output from the terminal shell and save it as `3b_formatted_output_test.png` for Peer Assignment.
 
 
-**Optional**
-
-At any point of time if you want to push your code to your forked GitHub repository, you can do so by following the instructions provided in this [link](https://cf-courses-data.static.labs.skills.network/9Yqz09lYagTH_Eo5c9BXqQ/Get%20familiar%20with%20Git%20Commands-v1.md.html).
-
-::page{title="Task 4: Package the application"}
+# Task 4: Package the application
 
 In this task, you will package the application created in the previous steps.
 
@@ -232,11 +220,8 @@ With a functional application being available, you now need to run unit tests to
 
     **For Option 2 -Peer-Graded Submission and Evaluation**: Take a **screenshot** of the code and save it as `5b_unit_testing_result.png`for Peer Assignment.
 
-**Optional:**
 
-At any point of time if you want to push your code to your forked GitHub repository, you can do so by following the instructions provided in this [link](https://cf-courses-data.static.labs.skills.network/9Yqz09lYagTH_Eo5c9BXqQ/Get%20familiar%20with%20Git%20Commands-v1.md.html).
-
-::page{title="Task 6: Web deployment of the application using Flask"}
+# Task 6: Web deployment of the application using Flask
 
 After all the tests are successfully completed, you need to deploy the application on the web. This will enable the customer to access and use the application.
 
@@ -279,11 +264,7 @@ After all the tests are successfully completed, you need to deploy the applicati
   6.  **Assessment :**  Take a screenshot of the final deployed application, testing it for the statement "I think I am having fun". Name this image as `6b_deployment_test.png` both for Option 1 -Final project submission and evaluation and For Option 2 -Peer-Graded Submission and Evaluation.
 
 
-**Optional:**
-
-At any point of time if you want to push your code to your forked GitHub repository, you can do so by following the instructions provided in this [link](https://cf-courses-data.static.labs.skills.network/9Yqz09lYagTH_Eo5c9BXqQ/Get%20familiar%20with%20Git%20Commands-v1.md.html).
-
-::page{title="Task 7: Incorporate Error handling"}
+# Task 7: Incorporate Error handling
 
 Incorporate the error handling capability in your function `emotion_detector` to manage blank entries from users, i.e. running the application without any input.
 
@@ -316,11 +297,7 @@ Incorporate the error handling capability in your function `emotion_detector` to
    
    Take a **screenshot** of the output displaying the error message and name it `7c_error_handling_interface.png` both for Option 1 -Final project submission and evaluation and For Option 2 -Peer-Graded Submission and Evaluation.
 
-**Optional:**
-
-At any point of time if you want to push your code to your forked GitHub repository, you can do so by following the instructions provided in this [link](https://cf-courses-data.static.labs.skills.network/9Yqz09lYagTH_Eo5c9BXqQ/Get%20familiar%20with%20Git%20Commands-v1.md.html).
-
-::page{title="Task 8: Run static code analysis"}
+# Task 8: Run static code analysis
 
 Finally, its time to check code compliance.
 
@@ -343,7 +320,7 @@ Finally, its time to check code compliance.
 
 
 
-::page{title="Submission Checklist"}
+# Submission Checklist
 
 Follow the checklist below to verify that your project meets all requirements before submission.
 	
@@ -437,13 +414,7 @@ Please make sure to verify that you have captured all the images as instructed d
 `8b_static_code_analysis.png`
 
 
-
-
-**Optional:**
-
-If you want to push your code to your forked GitHub repository, you can do so by following the instructions provided in this [link](https://cf-courses-data.static.labs.skills.network/9Yqz09lYagTH_Eo5c9BXqQ/Get%20familiar%20with%20Git%20Commands-v1.md.html). This ensures you can easily review your work whenever needed.
-
-::page{title="Conclusion"}
+# Conclusion
 
 Congratulations on completing the project.
 
