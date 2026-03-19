@@ -1,8 +1,8 @@
-### Репозиторий с итоговым проектом по курсу.
+# Репозиторий с итоговым проектом по курсу.
 
 Задание приведено ниже:
 
-## AI-Based Web Application Development and Deployment
+# AI-Based Web Application Development and Deployment
 
 ## Scenario
 
