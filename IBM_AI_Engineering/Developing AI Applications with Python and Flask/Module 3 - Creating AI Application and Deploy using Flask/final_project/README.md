@@ -48,8 +48,6 @@ Let\'s get started!
 
 4. **For Option 2: Peer-Graded Submission and Evaluation:**  
    - Submission requires **screenshots** for all activities under **Tasks 1 to 8**.  
-   
-5. Please run this lab in the **Skills Network Theia Lab environment** itself, not in your local IDE (like VS Code). The API used here is hosted on the Skills Network platform and is only accessible within the Theia Lab.*
 
 
 # Task 1: Fork and Clone the project repository
@@ -169,7 +167,7 @@ In this task, you will package the application created in the previous steps.
 
 2. **Assessment:**
 
-   **For Option 1 - AI Graded Submission and Evaluation**:  Ensure that you have pushed your __init__.py file to your forked GitHub repository by following the instructions [link](https://cf-courses-data.static.labs.skills.network/9Yqz09lYagTH_Eo5c9BXqQ/Get%20familiar%20with%20Git%20Commands-v1.md.html). in the provided link. Then, copy and save the public GitHub URL of the `__init__.py` file that contains the code to import the application module for the Final project submission and evaluation.
+   **For Option 1 - AI Graded Submission and Evaluation**:  Ensure that you have pushed your __init__.py file to your forked GitHub repository. Then, copy and save the public GitHub URL of the `__init__.py` file that contains the code to import the application module for the Final project submission and evaluation.
 
    **For Option 2 -Peer-Graded Submission and Evaluation**: Take a screenshot of the contents of the init file along with the final folder structure of the final_project directory.Make sure to fit both of the images into a single screenshot and name it `4a_packaging.png`for Peer Assignment.
 
