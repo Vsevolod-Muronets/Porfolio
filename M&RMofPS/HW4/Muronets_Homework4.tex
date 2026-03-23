@@ -1,0 +1,78 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsfonts}
+
+\title{Homework 4 Problems for the Course of Methodology and Research Methods of Political Science}
+\author{Vsevolod Sergeevich Muronets, first year PEP student}
+\date{The 27\textsuperscript{th} of March 2024}
+
+\begin{document}
+
+\maketitle
+\textbf{Problem 1}
+\\
+
+According to the given density function, here we are dealing with exponential distribution of independent and identically distributed random variables $X_1 , ..., X_n$. The likelihood function, then, is:
+$$\mathcal{L}(\lambda; X_1, ..., X_n) = \lambda^n \cdot exp(-\lambda \cdot \sum_{i=1}^{n}x_i)$$
+
+And the log-likelihood function:
+
+$$log(\mathcal{L}(\lambda; X_1, ..., X_n)) = nlog(\lambda) - \lambda \cdot \sum_{i=1}^{n}x_i$$
+
+To find the maximum likelihood estimate of $\lambda$, lets compute the derivative of the log-likelihood function with respect to $\lambda$ and set this derivative to 0 (as was proposed in the hint for the task):
+
+$$(nlog(\lambda) - \lambda \cdot \sum_{i=1}^{n}x_i)^{\prime} = \frac{n}{\lambda} - \sum_{i=1}^{n}x_i$$
+$$\frac{n}{\hat{\lambda}} - \sum_{i=1}^{n}x_i = 0$$
+$$\frac{n}{\hat{\lambda}} = \sum_{i=1}^{n}x_i$$
+$$\hat{\lambda} = \frac{n}{\sum_{i=1}^{n}x_i}$$
+
+Where $\hat{\lambda}$ is the maximum likelihood estimate for $\lambda$. Since $\frac{\sum_{i=1}^{n}x_i}{n}$ is the sample average, we can also say that maximum likelihood estimate of $\lambda$ is $\bar{x}^{-1}$.
+\\
+
+\textbf{Problem 2}
+\\
+
+I. Logit and probit models are both used to study binary dependent variables. But logit regression requires Logistic CDF: 
+$$f(\beta, X_i) = frac{1}{1 + exp(-(X_{i}\beta)}$$
+
+While probit regression involves Normal CDF:
+$$f(\beta, X_i) = \mathbf{\Phi}(\beta, X_{i})$$
+
+to work with MLE and find $p_i$ (in accordance to the Logistic or Normal distributions of errors).
+
+II. Generally, we can't use OLS for binary dependent variables since the distribution of the latter does not follow Normal distribution and the expected error term does not equal to zero. 
+Yet, we can still use OLS for binary dependent variables. To do that, we can write a multiple regression model in the usual way as:
+
+$$y = \beta_0 + \beta_{1}x_1 + ... + \beta_{k}x_k + u$$
+
+With $y$ as a binary dependent variable. The coefficients of independent variables will not be interpreted here the same way as it was for models with numeric dependent variables, that is, a measure of change in y with a one-unit increase in $x_{i}$ holding all other factors fixed. Assuming that Gauss-Markov 4th assumption that $\mathbb{E}(u | x_{1},...,x_k) = 0$ holds, we have:
+
+$$\mathbb{E}(y | x_{1},...,x_k) = \beta_0 + \beta_{1}x_1 + ... + \beta_{k}x_k$$
+
+Since $y$ here is a binary variable (takes only values of 0 and 1):
+
+$$\mathbb{E}(y | x_{1}, ..., x_k) = \mathbb{P}(y = 1 | x_{1}, ..., x_k)$$
+
+$\mathbb{P}$ here means the probability of successful outcome $(y=1)$. Therefore, the equation for $\mathbb{E}(y | x_{1}, ..., x_k)$ above can be rewritten as:
+
+$$\mathbb{P}(y = 1 | x_{1}, ..., x_k) = \beta_0 + \beta_{1}x_1 + ... + \beta_{k}x_k$$
+
+$\rightarrow$ probability of $y = 1$ is a linear function, and coefficient for some $x_i$ $(\beta_i)$ measures the change in the probability of "success" when $x_i$ changes, holding all other factors fixed:
+
+$$\Delta\mathbb{P}(y = 1 | x_{1}, ..., x_k) = \beta_i\Delta x_i$$
+
+This model is called a Linear probability model (LPM) and allows to use usual OLS mechanics, with $\hat{y}$ as a predicted probability of successful outcome, $\hat{\beta_0}$ - predicted probability of successful outcome when all independent variables are set to zero, and $\hat{\beta_i}$ measures predicted change in probability of success with one-unit increase in $x_i$. 
+
+III. Interpreting log-odds may be complicated because they do not show how a one-unit change in some independent variable (keeping other independent variables fixed) affects the value of the dependent variable itself. Instead, the effect that they show is that on log-odds of successful outcome, even not the odds themselves. 
+Odds is basically the probability of successful outcome $(y = 1)$ divided by the probability of "failure" $(y = 0)$: $\frac{p_i}{1 - p_i}$, where $p_i$ is the probability of "success". 
+Log-odds allow to construct a special form of linear relationship between the independent variables and the dependent variable (that is, log-odds of "successful" outcome), which otherwise would be more complicated. Yet, as it was stated above, it may be not so easy to interpret them.
+Log-odds are used in Logistic regressions and cannot be used to interpret the "probit" models.
+\\
+
+\textbf{Problem 6}
+\\
+
+I. To investigate the problem, I would need some data with observations of situations when accidents happened and situations when accidents did not happen. The most efficient, I suppose, would be to gather data of some amount of (randomly chosen) "accident-attracting" spots when situations of accidents occured and when everything was fine, and to establish significant factors that affect the probability of accident happening at the "accident-attracting" spot. That is, I would take a binary variable of accidents (with 1 meaning accident happened, and 0 meaning that accident did not occur) as a dependent variable for some binary-choice model, for example, Linear probability model or probit model, and conduct the corresponding regression. As independent variables (factors) I would use: 1) Number of accidents occured at the spot for the last 5 years; 2) share of accidents happened on this spot from the whole amount of accidents happened on the same road for the last five years; 3) weather; 4) condition of the road, measured in number of years passed from the time that the road was fixed last time; 5) curviness or the place around the "accident-attracting" spot; 6) traffic on the road; and 7) number of police officers and cameras on the road near the spot. 
+
+II. If there will be notifications on the app, people will become more cautious, but also more worried, and worries of the event happening may lead to event actually happening. Therefore, notifications may actually increase the amount of accidents and this way would not solve the problem.  
+\end{document}

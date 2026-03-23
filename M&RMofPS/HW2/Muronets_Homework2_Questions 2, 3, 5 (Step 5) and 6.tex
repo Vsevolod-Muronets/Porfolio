@@ -1,0 +1,154 @@
+\documentclass{article}
+\usepackage{amssymb}
+\usepackage{graphicx} % Required for inserting images
+
+\title{Homework 2. Questions 2, 3, 5 (Step 5) and 6}
+\author{Vsevolod Sergeevich Muronets, First Year PEP student}
+\date{The 30\textsuperscript{th} of December 2023}
+
+\begin{document}
+
+\maketitle
+
+\textbf{Question 2}
+\\
+
+We have 3 units of analysis and 2 types of treatment. Therefore, the number of assignment vectors should be:
+
+$$2^3=8$$
+
+There will be only four vectors with non-zero probability:
+\\
+
+1) (1, 0, 1) - is equal to 1/2 if $Y_1(1)>Y_1(0)$, and 0 if $Y_1(1) \leq Y_1(0)$;
+
+2) (0, 1, 1) - is equal to 1/2 if $Y_1(1)<Y_1(0)$, and 0 if $Y_1(1) \geq Y_1(0)$;
+
+3) (1, 0, 0) - is equal to 1/2 if $Y_1(1)>Y_1(0)$, and 0 if $Y_1(1) \leq Y_1(0)$;
+
+4) (0, 1, 0) - is equal to 1/2 if $Y_1(1)<Y_1(0)$, and 0 if $Y_1(1) \geq Y_1(0)$.
+\\
+
+The probabilities of all other vectors (i.e., 5) (0, 0, 1); 6) (1, 1, 1); 7) (0, 0, 0); 8) (1, 1, 0)) are equal to 0, because first and second subjects cannot get the same treatment, according to the given assignment mechanism.
+
+For the assignment mechanism to be probabilistic it would require that for each unit of analysis \textit{i} we would have:
+
+$$0 < \mathit{p_i} (\mathbf{X}, \mathbf{Y}(0), \mathbf{Y}(1)) < 1\ \forall \mathbf{X}, \mathbf{Y} (0), \mathbf{Y}(1)$$
+
+This means that all of the units (in our case, subjects) must have a possibility to be assigned with an active treatment ($p_i \neq 0$) and with zero-treatment ($p_i \neq 1$). As it can be seen from the list of described assignment vectos, all units have such a possibility. Therefore, the assignment mechanism \textbf{is} probabilistic.
+
+For the assignment mechanism to be unconfounded it would require that the mechanism does not depend on the potential outcomes:
+
+$$\mathbb{P}(\mathbf{W}|\mathbf{X}, \mathbf{Y}(0), \mathbf{Y}(1)) = \mathbb{P}(\mathbf{W}|\mathbf{X}, \mathbf{Y}^\prime (0), \mathbf{Y}^\prime (1))\ \forall\mathbf{W}, \mathbf{X}, \mathbf{Y}(0), \mathbf{Y}(1), \mathbf{Y}^\prime (0), \mathbf{Y}^\prime (1)$$
+
+Since the assignment of the treatment to the first subject is based on her voluntary choice, and this choice is based on the potential outcome of the treatment, the requirements of unconfoundedness are not satisfied, and the assignment mechanism \textbf{is not} unconfounded.
+
+Thus, the assignment mechanism is probabilistic and is not unconfounded (that is, it is confounded).
+\\
+
+\textbf{Question 3}
+\\
+
+1. When working with causal inferences, we always face the problem of time: that is, we cannot assign multiple alternative treatments (as well as some treatment and zero-treatment) to a particular unit of analysis at the same moment of time – at least if we want to get non-mixed potential outcomes for theses treatments that we could compare (and if we want our experiment to satisfy Stability Axiom, that is, Stable Unit Treatment Value assumption, or SUTVA). We could assign alternative treatments at some other moments of time, but in such a design we are not considering the effect of giving a “first” treatment to the unit of analysis at the initial moment of time, which could be quite sufficient. Without knowing exactly what potential outcomes would be brought by alternative treatments at the same moment of time for the same unit of analysis, we are in a situation of missing data (about the exact potential outcomes of alternative treatments) when studying causal inference. 
+\\
+
+2. But it is possible to fill the “gaps” of missing data approximately. Potential outcomes model, known as Rubin causal model, is about conducting randomized experiments in which some treatments are assigned to various units of analysis randomly, and this randomization allows one to regard to different units of analysis as equal (on average), since randomization of treatments assignment is aimed at providing a way to treat these various studied units as being different only in the parameter of which treatment was assigned to them, “other things being equal”. This “equality” of units makes the comparison between them possible. To make a comparison, though, it is also necessary to see how potential outcomes of the assigned treatments are different from each other, and for this measuring potential outcomes is crucially important. After assigning the treatments and measuring the outcomes, if the experiment was conducted properly (with SUTVA being satisfied, and the assignment mechanism being individualistic, probabilistic and unconfounded), it becomes possible to state how the gaps of missing data could be, at least approximately, filled, since the average outcome of any particular treatment assigned to some units can be imposed onto all other units as units of a population that shares this average outcome, due to the assumed equality of units within the frames of the conducted experiment.   
+\\
+
+\textbf{Question 5. Step 5}
+\\
+
+Central limit theorem implies that $\frac{\sqrt{n}(\bar{X}_n - \mu)}{\sigma} \rightarrow^d \mathit{N}(0,1)$ if $X_n$ is a sequence of independent and identically distributed (iid) random variables with finite variance $\sigma^2$ and means $\mu$. $\bar{X}_n$ is a sample average and can be defined as $\frac{\sum_i^n X_i}{n}$. $\sigma$ is a square root of variance $\sigma^2$. Formula given above states that $\frac{\sqrt{n}(\bar{X}_n - \mu)}{\sigma}$ converges in distribution to Normal distribution with the mean of 0 and variance of 1. The fraction provided in the task, that is, $\frac{\sqrt{n}(s/n - 3.7)}{\sqrt{3.7}}$ is a variant of $\frac{\sqrt{n}(\bar{X}_n - \mu)}{\sigma}$ for Poisson distribution, with "s/n" serving as a sample average, and $\lambda = 3.7$ serving as both mean ($\mu$) and variance ($\sigma^2$) because one of the specific properties of Poisson distribution is that $\lambda = \mu = \sigma^2$.  
+\\
+
+\textbf{Question 6}
+\\
+
+To prove that sample variance is an unbiased estimator of the population variance $\sigma^2$ (estimand) we should prove that $\mathbb{E}[ \frac{\sum_i^N (X_i - \bar{X})^2}{N-1} ]=\sigma^2$, that is, we should derive $\sigma^2$ from $\mathbb{E}[ \frac{\sum_i^N (X_i - \bar{X})^2}{N-1} ]=\sigma^2$:
+
+$$\mathbb{E}[ \frac{\sum_i^N (X_i - \bar{X})^2}{N-1} ]=$$
+
+Since $\mathbb{E}[cx] = c\mathbb{E}[x]$:
+
+$$= \frac{1}{N-1} * \mathbb{E}[\sum_i^N (X_i - \bar{X})^2]=$$
+
+Using the exponentiation:
+
+$$= \frac{1}{N-1} * \mathbb{E}[\sum_i^N(X_i^2 - 2X_i \bar{X} + \bar{X}^2)]=$$
+
+Opening the brackets:
+
+$$= \frac{1}{N-1} * \mathbb{E}[\sum_i^N X_i^2 - \sum_i^N 2X_i \bar{X} + \sum_i^N \bar{X}^2]=$$
+
+Since $\bar{X}$ is constant, and $\sum cx_i = c \sum x_i$, $\sum c = n*c$:
+
+$$= \frac{1}{N-1} * \mathbb{E}[\sum_i^N X_i^2 - 2\bar{X} \sum_i^N X_i + N\bar{X}^2]=$$
+
+Since $\bar{X} = \frac{\sum_i^N X_i}{N}$, and therefore $\sum_i^N X_i = N\bar{X}$:
+
+$$= \frac{1}{N-1} * \mathbb{E}[\sum_i^N X_i^2 - 2\bar{X}N\bar{X} + N\bar{X}^2]=$$
+
+$$= \frac{1}{N-1} * \mathbb{E}[\sum_i^N X_i^2 - 2N\bar{X}^2 + N\bar{X}^2]=$$
+
+$$= \frac{1}{N-1} * \mathbb{E}[\sum_i^N X_i^2 - N\bar{X}^2]=$$
+
+Since $\mathbb{E}[X - Y]=\mathbb{E}[X]-\mathbb{E}[Y]$:
+
+$$= \frac{1}{N-1} * (\mathbb{E}[\sum_i^N X_i^2] - \mathbb{E}[N\bar{X}^2])=$$
+
+Since $\mathbb{E}[cx] = c\mathbb{E}[x]$
+
+$$= \frac{1}{N-1} * (\mathbb{E}[\sum_i^N X_i^2] - N\mathbb{E}[\bar{X}^2])=$$
+
+Knowing that $\mathbb{V}[\bar{X}]=\mathbb{E}[\bar{X}^2] - \mathbb{E}[\bar{X}]^2$, and that $\mathbb{V}[\bar{X}]=\frac{\sigma^2}{N}$:
+
+$$\mathbb{E}[\bar{X}^2]=\frac{\sigma^2}{N} + \mathbb{E}[\bar{X}]^2$$
+
+Then, knowing that $\mathbb{E}[\bar{X}]=\mathbb{E}[\frac{\sum_i^N X_N}{N}]$, and that $\mathbb{E}[X_i]=\mu$:
+
+$$\mathbb{E}[\bar{X}]=\mathbb{E}[\frac{\sum_i^N X_N}{N}]=\frac{1}{N}\mathbb{E}[\sum_i^N X_N]=$$
+
+$$=\frac{1}{N}\sum_i^N\mathbb{E}[X_N]=\frac{1}{N}\sum_i^N \mu=\frac{N*\mu}{N}=\mu$$
+
+Therefore:
+
+$$\mathbb{E}[\bar{X}^2]=\frac{\sigma^2}{N} + \mu^2$$
+
+And therefore:
+
+$$\mathbb{E}[ \frac{\sum_i^N (X_i - \bar{X})^2}{N-1} ]=...=\frac{1}{N-1} * (\mathbb{E}[\sum_i^N X_i^2] - N*(\frac{\sigma^2}{N} + \mu^2))=$$
+
+Since $\mathbb{E}[\sum x] = \sum \mathbb{E}[x]$:
+
+$$=\frac{1}{N-1} * (\sum_i^N \mathbb{E}[X_i^2] - N*(\frac{\sigma^2}{N} + \mu^2))=$$
+
+And also since $\mathbb{V}[X_i]=\sigma^2$ and $\mathbb{V}[X_i]=\mathbb{E}[X_i^2] - \mathbb{E}[X_i]^2$, and since therefore $\mathbb{E}[X_i^2]=\mathbb{V}[X_i] + \mathbb{E}[X_i]^2=\sigma^2 + \mu^2$:
+
+$$=\frac{1}{N-1} * (\sum_i^N (\sigma^2 + \mu^2) - N*(\frac{\sigma^2}{N} + \mu^2))=$$
+
+$$=\frac{1}{N-1} * (\sum_i^N (\sigma^2 + \mu^2) - N\frac{\sigma^2}{N} - N\mu^2)=$$
+
+Opening the brackets:
+
+$$=\frac{1}{N-1} * (\sum_i^N (\sigma^2) + \sum_i^N (\mu^2) - \sigma^2 - N\mu^2)=$$
+
+Since $\sigma$ and $\mu$ are constants and $\sum c = n*c$:
+
+$$=\frac{1}{N-1} * (N*\sigma^2 + N*\mu^2 - \sigma^2 - N\mu^2)=$$
+
+$$=\frac{(N-1)*\sigma^2}{N-1}=\sigma^2$$
+\\
+
+Therefore, indeed $\mathbb{E}[ \frac{\sum_i^N (X_i - \bar{X})^2}{N-1} ]=\sigma^2$, quod erat demonstrandum. As it can be seen from the formula, if we take "N" instead of "N-1" in the denominator of $\mathbb{E}[ \frac{\sum_i^N (X_i - \bar{X})^2}{N-1} ]$, in the end we would get that $\mathbb{E}[ \frac{\sum_i^N (X_i - \bar{X})^2}{N-1} ]=\frac{(N-1)*\sigma^2}{N}$, therefore failing to prove that $\mathbb{E}[ \frac{\sum_i^N (X_i - \bar{X})^2}{N-1} ]=\sigma^2$, i.e. that sample variance is an unbiased estimator for population variance.This is why "N-1" is essentially important to the formula. 
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

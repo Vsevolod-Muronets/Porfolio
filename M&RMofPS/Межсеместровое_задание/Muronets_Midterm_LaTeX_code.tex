@@ -1,0 +1,322 @@
+\documentclass{article}
+\usepackage{amssymb}
+\usepackage{graphicx} % Required for inserting images
+
+\title{Midterm Problems for the Course of Methodology and Research Methods of Political Science}
+\author{Vsevolod Sergeevich Muronets, first year PEP student}
+\date{The 17\textsuperscript{th} of January 2024}
+
+\begin{document}
+
+\maketitle
+\textbf{Problem 1 (I-II, III (see also in Python code))}
+\\
+
+(i) With Education being measured in years, for a person with 10 years of education we would have:
+
+$$\mathbb{E}(Turnout) = \beta_0 + \beta_1Education + \mathbb{E}(\epsilon|Turnout)$$
+$$\mathbb{E}(Turnout) = 0,4 + 0,01 * 10 + 0$$
+$$\mathbb{E}(Turnout) = 0,5$$
+
+(ii) In the given function, intercept serves as a measurement of a minimal turnout, that is, a turnout of a respondent with no education (0 years of education). Coefficient in front of education is a slope of a function, representing the measure of how much one-unit increase in the independent variable (Education) would affect the value of the dependent variable (Turnout). Since the slope is positive, we should expect a growing Turnout with a growth of years of education, though with the biggest amount of years of education being 15, we can state that the probability of a turnout will always center around 0,4, at least while we consider only the observations in which education is the only important factor affecting the turnout.
+\\
+
+(iii) --- See also in Python code --- 
+With such a big variance of epsilon the epsilon itself becomes quite large in many observations. This shows that epsilon, representing unobserved effects, actually affects the dependent variable quite significantly, and therefore in becomes hard to say that there is indeed a causal relationship between the independent variable and the dependent one, this being represented in a vary small value of R-squared in the results if we run the sm.OLS function as in the Python code.
+\\
+
+\textbf{Problem 2 (III, see also in Python code)}
+\\
+
+(iii) Comparing the results for treatment groups 1 and 2 and 3 and 4, we can state that for the first two, which were told about the effectiveness of a politician, knowledge of the conflict of interest was important and had an effect on the answers of the respondents. For the second two groups, which were told about an ineffectiveness of a politician, the conflict of interest did not really influence the answers. Therefore, it can be said that the effect of a conflict of interest indeed depends on the effectiveness of a politician (having a significant effect for an effective politician and having low effect for an ineffective politician).
+\\
+
+\textbf{Problem 3 (From Wooldridge, Chapter 2, Problem 2)}
+\\
+
+We have that $y = \beta_0 + \beta_1x + u$. If $\mathbb{E} \neq 0$: 
+
+$$\mathbb{E}(y) = \beta_0 + \beta_1x + \mathbb{E}(u),$$
+
+Where $\mathbb{E} = \alpha_0 = const.$ and $\beta_0 = const.$. Therefore we can rewrite the formula above as:
+
+$$\mathbb{E}(y) = (\beta_0 + \alpha_0) + \beta_1x,$$
+
+Where $(\beta_0 + \alpha_0) = const.$ is a new intercept. Therefore we can rewrite the formula again as:
+
+$$\mathbb{E}(y) = (\beta_0 + \alpha_0) + \beta_1x + \mathbb{E}(u_1),$$
+
+Where $u_1$ is a new error and $\matbb{E}(u_1)=0$. Due to this the model can be rewritten with a new intercept of $(\beta_0 + \alpha_0)$ and a new error $u_1$ with its expectation being $\matbb{E}(u_1) = 0$:
+
+$$y = (\beta_0 + \alpha_0) + \beta_1x + u_1$$
+
+QED.
+\\
+
+\textbf{Problem 4 (From Wooldridge, Chapter 2, Problem 4)}
+\\
+
+(i) When cigs = 0 we have:
+$$\widehat{bwght} = 119,77 - 0,514*0 = 119,77$$
+When cigs = 20 we have:
+$$\widehat{bwght} = 119,77 - 0,514*20$$
+$$\widehat{bwght} = 119,77 - 10,28$$
+$$\widehat{bwght} = 109,49$$
+
+In the first case $\widehat{bwght}$ simply equals to the $\beta_0$, that is, to the intercept equal to 119,77. This is a situation when mother did not smoke any cigarettes during pregnancy (cigs = 0). Since the slope is negative, we can expect that with every unit increase of cigarettes smoked per day the birth weight of a child will decrease and will be less than 119,77. This is what we face in a case of a mother (approximately and with model established from a given data sample) smoking 20 cigarettes per day during her pregnancy. 
+\\
+
+(ii) This simple regression assumes that the expected value of any other factors influencing the infant birth weight is equal to zero $(\mathbb{E}(u)=0$; therefore, it looks only at independent variable (cigs) and the dependent one (bwght) and establishes a pattern in which a change of the prior is linked to a change of the latter. But the significance of all other factors can actually be higher that the expected 0 for the population, and in such a case the approximation would work only very weakly. The OLS regression function is only an approximation of a real situation and data, a model of it, and the model can allow prediction and making links, but it does not show us a universal causal relationships between the variables. 
+\\
+
+(iii) To have $\widehat{bwght} = 125$ ounces we mush have (cigs) such that:
+
+$$119,77 - 0,514cigs = 125$$
+$$0,514cigs = 119,77 - 125$$
+$$0,514cigs = -5,23$$
+$$cigs \approx -10,18$$
+
+Therefore, for the new-born baby to be 125 ounces of weight, her mother should "smoke" $(-10,18)$ cigarettes per day, but this, of course, does not make any sense. The given simple regression shows us only how much smoking a one unit of cigarettes per day more would affect the child's birth weight, with the "healthiest" baby being 119,77 ounces of weight. Therefore, this simple regression cannot say anything about children whose birth weight is more than 119,77, since it was constructed from an approximation of a data sample of 1388 observations. 
+\\
+
+(iv) The share of women who did not smoke during pregnancy in the sample is $85\%$. According to the simple regression that we have, we would expect all of these women's babies to be born with a weight of 119,77 ounces, that is, around 1180 babies would be of such weight. In reality this was probably not the case. The simple regression function is just a model of reality, not a direct representation of it, and actual values of bwght in the samples are different from the  $\widehat{bwght}$. 
+\\
+
+\textbf{Problem 5 (From Wooldridge, Chapter 2, Problem 10)}
+\\
+
+(i) In the Chapter 2 we established an equation [2.52] for the $\hat{\beta_1}$ conditional on the sample values of x:
+
+$$\hat{\beta_1} = \beta_1 + \frac{\sum_{i=1}^{n} d_i u_i}{SST_x}$$
+
+Which we can rewrite for an expectation of $\hat{\beta_1}$ as:
+
+$$\mathbb{E}(\hat{\beta_1}) = \beta_1 + \mathbb{E}[\frac{\sum_{i=1}^{n} d_i u_i}{SST_x}]$$
+
+Since $\mathbb{E}(\hat{\beta_1})$ is conditional on $x_i$, and $d_i = (x_i - \bar{x})$ and $SST_x = \sum_{i=1}^{n} (x_i - \bar{x})^2$ are dependent only on x, and since therefore they behave like constants (according to Wooldridge, Appendix B, Property CE.1):
+
+$$\mathbb{E}(\hat{\beta_1}) = \beta_1 + \frac{\sum_{i=1}^{n} d_i \mathbb{E}(u_i)}{SST_x}$$
+
+Using properties of sum and expectation with relation to constants. Then, using the properties of sum:
+
+$$\mathbb{E}(\hat{\beta_1}) = \beta_1 + \frac{d_i \sum_{i=1}^{n}\mathbb{E}(u_i)}{SST_x}$$
+
+And since $w_i = \frac{d_i}{SST_x}$ : 
+
+$$\mathbb{E}(\hat{\beta_1}) = \beta_1 + w_i\sum_{i=1}^{n}\mathbb{E}(u_i)$$
+
+Now, since $w_i$ also depends only on x and therefore also acts like a constant:
+
+$$\mathbb{E}(\hat{\beta_1}) = \beta_1 + \sum_{i=1}^{n} w_i\mathbb{E}(u_i)$$
+
+After this, we can rewrite the original formula for $\hat{\beta_1}$ as:
+
+$$\hat{\beta_1} = \beta_1 + \sum_{i=1}^{n} w_i u_i$$
+
+QED.
+\\
+
+(ii) To prove that $\hat{\beta_1}$ and $\bar{u}$ are uncorrelated we have to prove that:
+
+$$ Corr( \hat{\beta_1}, \bar{u} ) = \frac{Cov(\hat{\beta_1}, \bar{u})}{\sigma_{\hat{\beta_1}} \cdot \sigma_{\bar{u}}} = 0$$
+
+According to Wooldridge, Appendix B, p. 739. Since $Cov(\hat{\beta_1}, \bar{u})$ is in the numerator, it is enough to prove that:
+
+$$ Cov(\hat{\beta_1}, \bar{u}) = \mathbb{E}[(\hat{\beta_1} - \beta_1) \cdot \bar{u})] = 0$$
+
+As it is stated in the hint for the task. Using what we have established in (i):
+
+$$\hat{\beta_1} = \beta_1 + \sum_{i=1}^{n} w_i u_i$$
+$$\hat{\beta_1} - \beta_1 = \sum_{i=1}^{n} w_i u_i$$
+
+Therefore, we can rewrite the formula for the studied covariance as:
+
+$$ Cov(\hat{\beta_1}, \bar{u}) = \mathbb{E}[(\sum_{i=1}^{n} w_i u_i) \cdot \bar{u})] =$$
+
+In (i) we considered $\hat{\beta_1}$ as being conditional on the values of x, and now we will continue to treat it the same way. Therefore, $w_i$ still behaves like a constant:
+
+$$= \mathbb{E}[(w_i \sum_{i=1}^{n} u_i) \cdot \bar{u}] =$$
+
+Since all $u_i$ are independent from each other (according to, for example, the proof of Theorem 2.2 in Wooldridge, Chapter 2) and, therefore, $u_i$ is independent from $\bar{u}$: 
+
+$$= (w_i \mathbb{E}[\sum_{i=1}^{n} u_i]) \cdot \mathbb{E}[\bar{u}] = $$
+
+Now, using the properties of sum and expectation:
+
+$$= (w_i \sum_{i=1}^{n} \mathbb{E}[u_i]) \cdot \mathbb{E}[\bar{u}] = $$
+
+And using the properties of sum in relation to constants:
+
+$$= (\sum_{i=1}^{n} w_i \mathbb{E}[u_i]) \cdot \mathbb{E}[\bar{u}] = $$
+
+Since in the task we were given that $\sum_{i=1}^{n} w_i = 0$:
+
+$$= (0 \cdot \mathbb{E}[u_i]) \cdot \mathbb{E}[\bar{u}] = 0$$
+
+QED. 
+\\
+
+(iii) Since the formula for $\bar{y}$ is:
+
+$$\bar{y} = \hat{\beta_0} + \hat{\beta_1} \bar{x}$$
+
+We have:
+
+$$\hat{\beta_0} = \bar{y} - \hat{\beta_1} \bar{x}$$
+
+And since $\bar{y}$ is also: 
+
+$$\bar{y} = \beta_0 + \beta_1 \bar{x} + \bar{u}$$
+
+We have: 
+
+$$\hat{\beta_0} = (\beta_0 + \beta_1 \bar{x} + \bar{u}) - \hat{B_1} \bar{x}=$$
+$$= \beta_0 + \bar{u} - (\hat{\beta_1} - \beta_1)\bar{x}$$
+
+QED.
+\\
+
+(iv) From (iii) we know that:
+
+$$\hat{\beta_0} = \beta_0 + \bar{u} - (\hat{\beta_1} - \beta_1)\bar{x}$$
+
+Therefore variance of $\hat{\beta_0}$ can be written as:
+
+$$Var(\hat{\beta_0}) = Var(\beta_0 + \bar{u} - (\hat{\beta_1} - \beta_1)\bar{x})$$
+
+Or:
+
+$$Var(\hat{\beta_0}) = Var(\beta_0 + \bar{u} + (\beta_1 - \hat{\beta_1})\bar{x})$$
+
+Using the properties of $Var$, and since $\hat{\beta_1}$ and $\bar{u}$ are from (ii) are uncorrelated (and still conditioning on values of x):
+
+$$Var(\hat{\beta_0}) = Var(\beta_0) + Var(\bar{u}) + Var((\beta_1 - \hat{\beta_1})\bar{x}) = $$
+
+Since variance measures how some variable in the sample is different from the corresponding variable in the population (according to Wooldridge, Appendix B, p. 734), for the population intercept ($\beta_0$) and slope ($\beta_1$) variance would be equal to 0:
+
+$$= 0 + Var(\bar{u}) + Var((\beta_1 - \hat{\beta_1})\bar{x})=$$
+$$= Var(\bar{u}) + Var((\beta_1 - \hat{\beta_1})\bar{x})=$$
+
+Since $\bar{u} = \frac{\sum_{i=1}^{n} u_i}{n}$:
+
+$$= Var(\frac{\sum_{i=1}^{n} u_i}{n}) + Var((\beta_1 - \hat{\beta_1})\bar{x})=$$
+
+Given the properties of $Var$ (according to Wooldridge, Appendix B, equation B.33 and Property Var.2):
+
+$$= \frac{\sum_{i=1}^{n} Var(u_i)}{n^2} + Var((\beta_1 - \hat{\beta_1})\bar{x})=$$
+ 
+Since $Var(u_i) = \sigma^2$ (according to Wooldridge, Chapter 2, proof of theorem 2.2):
+
+$$= \frac{\sum_{i=1}^{n} \sigma^2}{n^2} + Var((\beta_1 - \hat{\beta_1})\bar{x})=$$
+
+And since $\sigma^2$ is a constant, using properties of $\Sigma$:
+
+$$= \frac{n \cdot \sigma^2}{n^2} + Var((\beta_1 - \hat{\beta_1})\bar{x})=$$
+$$= \frac{\sigma^2}{n} + Var((\beta_1 - \hat{\beta_1})\bar{x})=$$
+
+Then, using the property of variance of a subtraction:
+
+$$= \frac{\sigma^2}{n} + Var(\bar{x}\beta_1) + Var(\bar{x}\hat{\beta_1})=$$
+
+Since we are still conditioning of the values of x, $\bar{x}$ behaves like a constant:
+
+$$=\frac{\sigma^2}{n} + \bar{x}^2Var(\beta_1) + \bar{x}^2Var(\hat{\beta_1})=$$
+
+Because, as it was stated above, $Var(\beta_1)=0$:
+
+$$=\frac{\sigma^2}{n} + 0 + \bar{x}^2Var(\hat{\beta_1})=$$
+
+From Wooldridge, Chapter 2, theorem 2.2 we have:
+
+$$Var(\hat{\beta_1}) = \frac{\sigma^2}{SST_x}$$
+
+Therefore:
+
+$$Var(\hat{\beta_0})=\frac{\sigma^2}{n} + \bar{x}^2\frac{\sigma^2}{SST_x}=\frac{\sigma^2}{n} + \frac{\sigma^2 (\bar{x})^2}{SST_x}$$
+
+QED.
+\\
+
+(v) In Wooldridge, Appendix A, we have an equation A.7:
+
+$$\sum_{i=1}^{n} (x_i - \bar{x})^2 = \sum_{i=1}^{n} x_i^2 - n(\bar{x})^2$$
+
+And also the proof of this equation on the next page (p. 705). Since $SST_x = \sum_{i=1}^{n} (x_i - \bar{x})^2$, there is probably a typo in the hint of the task (stating that $\frac{SST_x}{n} = \frac{\sum_{i=1}^{n} x_i^2 - (\bar{x})^2}{n}$, what is the same as stating that $SST_x = \sum_{i=1}^{n} x_i^2 - (\bar{x})^2$). Using the right meaning of $SST_x$, we can make a simplification required in the task. From (iv) we have:
+
+$$Var(\hat{\beta_0})=\frac{\sigma^2}{n} + \bar{x}^2\frac{\sigma^2}{SST_x}=\frac{\sigma^2}{n} + \frac{\sigma^2 (\bar{x})^2}{SST_x}$$
+
+Since $SST_x = \sum_{i=1}^{n} (x_i - \bar{x})^2 = \sum_{i=1}^{n} x_i^2 - n(\bar{x})^2$:
+
+$$Var(\hat{\beta_0})=\frac{\sigma^2}{n} + \bar{x}^2\frac{\sigma^2}{SST_x}=\frac{\sigma^2}{n} + \frac{\sigma^2 (\bar{x})^2}{\sum_{i=1}^{n} x_i^2 - n(\bar{x})^2} = $$
+
+Now, doing the algebra, we receive:
+
+$$= \sigma^2\biggl(\frac{1}{n} + \frac{(\bar{x})^2}{\sum_{i=1}^{n} x_i^2 - n(\bar{x})^2}\biggr) =$$
+
+$$= \sigma^2\biggl(\frac{\sum_{i=1}^{n} x_i^2 - n(\bar{x})^2 + n(\bar{x})^2}{n\sum_{i=1}^{n} x_i^2 - n(\bar{x})^2}\biggr) = $$
+
+$$= \sigma^2\biggl(\frac{\sum_{i=1}^{n} x_i^2}{n\sum_{i=1}^{n} x_i^2 - n(\bar{x})^2}\biggr) = $$
+
+$$= \frac{\sigma^2\sum_{i=1}^{n} x_i^2}{n\sum_{i=1}^{n} x_i^2 - n(\bar{x})^2}$$
+
+Since we know that $\frac{1}{n} = n^{-1}$ and $\sum_{i=1}^{n} (x_i - \bar{x})^2 = \sum_{i=1}^{n} x_i^2 - n(\bar{x})^2$, we can rewrite the equation above as:
+
+$$Var(\hat{\beta_0}) = \frac{\sigma^2 n^{-1}\sum_{i=1}^{n} x_i^2}{\sum_{i=1}^{n} (x_i - \bar{x})^2}$$
+
+And this is the equation 2.58 we have in Chapter 2. Therefore, the simplification is done.
+\\
+
+\textbf{Problem 6 (From Wooldridge, Chapter 2, Computer Exercise 3)}
+\\
+
+(ii) From running the sm.OLS function we received that the $\beta_1$ is indeed negative and is equal to $-0.1507$ . Therefore, we can calculate the change in $sleep$ with 2-hours change in $totwrk$ (since $totwrk$ is measured in minutes, according to data description, and 2 hours are equal to 120 minutes):
+
+$$\Delta sleep = \beta_1 \cdot \Delta totwrk$$
+$$\Delta sleep = -0,1507 \cdot 120$$
+$$\Delta sleep = - 18,084$$
+
+Therefore, $sleep$ is estimated to fall by 18,084 minutes (since $sleep$ is also measured in minutes according to the description). We consider this not to be a very significant change, and it is not surprising given a relatively small $\beta_1$. 
+\\
+
+\textbf{Problem 7 (From Wooldridge, Chapter 2, Computer Exercise 6)}
+\\
+
+(i) Since the provided population model $math10 = \beta_0 + \beta_1log(expend) + u$ is of level-log type, the relationship between $math10$ and $expend$ would have diminishing marginal returns (according to Wooldridge, Appendix A, p. 712), that is, a diminishing effect seems here more appropriate.
+\\
+
+(ii) The general formula for calculating a measure of a small percentage point change in level-log equations is (according to Wooldridge, Appendix A, p. 713):
+
+$$100\cdot\Delta log(x)\approx\%\Delta x$$
+
+Since $10\%$ change can be regarded as small, from the formula above we would have for a percentage point change in $expend$:
+
+$$100\cdot\Delta log(expend) \approx 10$$
+$$\Delta log(expend) \approx \frac{10}{100}$$
+$$\Delta log(expend) \approx \frac{1}{10}$$
+
+Since change in $math10$ depending on the change in $expend$, according to the Table 2.3 for level-log models in Wooldridge, Chapter 2, and what we have established above, can be measured by:
+
+$$\Delta y = \beta_1 \Delta log(expend)$$
+
+The change in $math10$ can be measured in the following way:
+
+$$\Delta math10 = \beta_1 \Delta log(expend)$$
+$$\Delta math10 = \beta_1 \cdot \frac{1}{10}$$
+$$\Delta math10 = \frac{\beta_1}{10}$$
+
+QED.
+\\
+
+(iv) After running the sm.OLS function we received $\beta_1$ equal to 11,1644. Using what we established in (ii), we can calculate change in $math10$ as follows:
+
+$$\Delta math10 = \frac{\beta_1}{10}$$
+$$\Delta math10 = \frac{11,1644}{10}$$
+$$\Delta math10 = 1,11644$$
+
+That is, $\Delta math10$ in this case is equal to $1,11644\%$. We would regard to this change as not really big.
+\\
+
+(v) We can imagine a situation in which the expenditures per student would increase by a $1000\%$, and with a given dataset it would mean that a change in math pass rate would exceed $100\%$. Math pass rate more than $100\%$, of course, does not make sense, but such a situation when establishing a relationship between $math10$ and $expend$ is ok since it is an approximation of a real situation with a given amount of expenditures in sample, while expenditures can be increased not only to increase the math pass rate. Therefore, fitted values exceeding $100\%$ are also ok since they are created after an approximation of real values and each of them do not have to have a corresponding value in reality.
+
+
+\end{document}

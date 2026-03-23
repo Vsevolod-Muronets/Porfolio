@@ -1,0 +1,265 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{booktabs}
+
+\title{Homework 3 Problems for the Course of Methodology and Research Methods of Political Science}
+\author{Vsevolod Sergeevich Muronets, first year PEP student}
+\date{The 27\textsuperscript{th} of February 2024}
+
+\begin{document}
+
+\maketitle
+\textbf{Problem 2}
+\\
+
+\textbf{a)} For a sequence of Binomial-distribution trials we have the following formula for likelihood:
+
+$$\mathcal{L}_{Binomial} = \prod^{L}_{i=1} \left( \begin{array}{c} n \\ k_i \end{array} \right)p^{k_i}(1-p)^{n-k_i}$$
+
+We are given that $p = 0,3$ and $n = 4$. The given sequence is $[3, 0, 1, 1]$. Then, knowing that $\left( \begin{array}{c} n \\ k_i \end{array} \right) = \frac{n!}{k_{i}!(n - k_{i})!}$, we receive:
+
+$$\mathcal{L}_{a)} = \frac{4!}{3!1!}0,3^{3}(1 - 0,3)^{4-3} \cdot \frac{4!}{0!4!}0,3^{0}(1 - 0,3)^{4-0} \cdot$$
+$$\cdot \frac{4!}{1!3!}0,3^{1}(1 - 0,3)^{4-1} \cdot \frac{4!}{1!3!}0,3^{1}(1 - 0,3)^{4-1}=$$
+$$= \frac{24}{6 \cdot 1} \cdot 0,027 \cdot 0,7 \cdot \frac{1}{1} \cdot 1 \cdot 0,2401 \cdot$$
+$$\cdot \frac{24}{1 \cdot 6} \cdot 0,3 \cdot 0,343 \cdot \frac{24}{1 \cdot 6} \cdot 0,3 \cdot 0,343 =$$
+$$= 4 \cdot 0,027 \cdot 0,7 \cdot 1 \cdot 1 \cdot 0,2401 \cdot$$
+$$\cdot 4 \cdot 0,3 \cdot 0,343 \cdot 4 \cdot 0,3 \cdot 0,343 \approx 0,003$$
+
+Therefore,
+
+$$\mathcal{L}_{a)} \approx 0,003$$
+\\
+
+\textbf{b)}  For a sequence with elements coming from Poisson distribution we have the following likelihood formula:
+
+$$\mathcal{L}_{Poisson} = \prod^{L}_{i=1}  \frac{\lambda^{w_i}e^{-\lambda}}{w_{i}!}$$
+
+Since we are given that $\lambda = 3$, an the sequence is $[3, 2, 6]$:
+
+$$\mathcal{L}_{b)} = \frac{3^{3} \cdot e^{-1}}{3!} \cdot \frac{3^{2} \cdot e^{-1}}{2!} \cdot \frac{3^{6} \cdot e{-1}}{6!} =$$
+$$= \frac{27 \cdot e^{-1}}{6} \cdot \frac{9 \cdot e^{-1}}{2} \cdot \frac{729 \cdot e{-1}}{720} =$$
+$$= \frac{177147 \cdot e^{-3}}{8640} \approx 20,503 \cdot e^{-3} \approx 1,021$$
+
+Therefore,
+
+$$\mathcal{L}_{b)} \approx 1,021$$
+
+\textbf{Problem 5}
+\\
+
+The question requiring two binary dependent variables could be the following: how mental and physical health conditions affect political participation? Political participation here can be measured by two binary (dependent) variables: voters turnout (participated in the elections / did not participate; though this variable is on the lecture slides) and donations to political campaigns (donated/did not donate). As for specific independent variables, these could be cognitive functioning, general health, physical health (measured by walking speed). These variables were suggested by the article "How Different Forms of Health Matter to Political Participation" (Barry C. Burden et al.) in Journal of Politics, and in addition to them (or as an alternative) I personally could also propose two binary dependent variables more: party membership (member / not a member of any particular party) and party support (support / do not support any particular party). Also, it would be interesting to see how health conditions affect participation in politically- street protests, what we can measure with an event-count dependent variable of, for example, participation in such protests in the last five years (how many times did the respondent participate in the last five years). 
+\\
+
+\textbf{Problem 7 (Table)}
+\\
+
+\begin{center}
+\begin{tabular}{lccc}
+
+\multicolumn{4}{c}{Table for the results of regression analysis} \\
+\bottomrule
+\bottomrule
+& Model (i) & Model (ii) & Model (iii) \\
+\bottomrule
+Intercept & 8.2402*** & 8.0819*** & 0.0279*** \\
+& (0.287) & (0.313) & (0.001) \\
+
+Highest grade, mother (motheduc) & 0.1901*** & 0.1929*** & 0.1901*** \\
+& (0.028) & (0.028) & (0.028) \\
+
+Highest grade, father (fatheduc) & 0.1089*** & 0.1084*** & 0.1089*** \\
+& (0.020) & (0.020) & (0.020) \\
+
+Abil. measure, not standardized (abil) & 0.4015*** & 0.3990*** & 0.4015*** \\
+& (0.030) & (0.030) & (0.030) \\
+
+Squared abil. measure, not standardized(abil\textunderscore squared) & 0.0506*** & 0.0506*** & 0.0506*** \\
+& (0.008) & (0.008) & (0.008) \\
+
+College tuition, age 17 (tuit17) & . & 0.0158 & . \\
+& . & (0.063) & . \\
+
+College tuition, age 18 (tuit18) & . & 6.027e-05 & . \\
+& . & (0.064) & . \\
+
+College tuition, average (tuit\textunderscore average) & . & . & 0.4787*** \\
+& . & . & (0.017) \\
+\bottomrule
+Observations & 1230 & 1230 & 1230 \\
+$R^2$ & 0.444 & 0.445 & 0.444 \\
+\bottomrule
+\bottomrule
+\end{tabular}
+\end{center}
+Standard errors in parentheses \\
+$^{*}p < 0,05, ^{**}p < 0,01, ^{***} p < 0,001$
+\\
+
+\textbf{Problem 8}
+\\
+
+Primarily, time-series data violates Gauss-Markov third assumption about independence of variables. If we are to construct a model with time-series independent variables, those that are variance of the same variables in the different moments of time will be in linear relation with each other, this making them non-independent. Also, the 6th assumption about the independence of error terms is violated in regressions with time-series data for quite the same reason. It does not mean that OLS cannot be used for analysing such data, but all of the other assumptions should be held more strictly when conducting regressions, for example, assumption 5 about homoskedasticity. 
+\\
+
+\textbf{Problem 9 (First task + Wooldridge, Chapter 4, Problem 10)}
+\\
+
+Task 1:
+(0)
+ 
+To prove that $R^2$ is equal to 0, it is enough to prove that $\Sigma^{N}_{i=1} (\hat{y}_{i} - \bar{y})^2 = 0$. If we take the derivative of $\Sigma^{N}_{i=1}\hat{u}_{i}^2 = \Sigma^{N}_{i=1} (y_{i} - \hat{\beta}_{0})^2$ we receive:
+
+$$\Sigma^{N}_{i=1}2\hat{u}_i = \Sigma^{N}_{i=1} 2(y_{i} - \hat{\beta}_{0})$$
+
+$$2\Sigma^{N}_{i=1}\hat{u}_i = \Sigma^{N}_{i=1} 2(y_{i} - \hat{\beta}_{0})$$
+
+Knowing that the sum of residuals is equal to zero:
+
+$$0 = \Sigma^{N}_{i=1} 2(y_{i} - \hat{\beta}_{0})$$
+
+Using the properties of $\Sigma$:
+
+$$0 = \Sigma^{N}_{i=1} 2y_{i} - \Sigma^{N}_{i=1}2\hat{\beta}_{0}$$
+
+Since we were taking the derivative with regards to $\hat{\beta}_0$, it behaves like a constant:
+
+$$\Sigma^{N}_{i=1} 2y_{i} - N\cdot 2\hat{\beta}_{0} = 0$$
+
+Then:
+
+$$2\Sigma^{N}_{i=1} y_{i} = N\cdot 2\hat{\beta}_{0}$$
+
+$$\frac{2\Sigma^{N}_{i=1} y_{i}}{2N} = \hat{\beta}_{0}$$
+
+$$\frac{\Sigma^{N}_{i=1} y_{i}}{N} = \hat{\beta}_{0}$$
+
+Now, since $\frac{\Sigma^{N}_{i=1} y_{i}}{N} = \bar{y}$ we have:
+
+$$\hat{\beta}_{0} = \bar{y}$$
+
+Since for the model without explanatory variables $\hat{y}_i = \beta_0$ we receive:
+
+$$\hat{y}_i = \bar{y}$$
+$$\hat{y}_i - \bar{y} = 0$$
+
+For all $i$. Therefore:
+
+$$\Sigma^{N}_{i=1} (\hat{y}_{i} - \bar{y})^2 = \Sigma^{N}_{i=1} (0)^2 = 0$$
+
+QED.
+\\
+
+Wooldridge:
+
+(i) To check whether all independent variables are significant at 5\% level, we should conduct a one-sided F-test. To calculate the F-statistic:
+
+$$F = \frac{R^2 / q}{(1 - R^2) / n-k}$$
+
+Given that we eliminate 4 variables from the unrestricted model (that is, $q = 4$), $R^2 = 0,0395$, $n = 142$, and we have 5 parameters in the unrestricted model (4 independent variables + 1 intersept, $k = 5$):
+
+$$F = \frac{0,0395 / 4}{(1 - 0,0395) / (142 - 5)} = \frac{0,0395 \cdot 137}{0,9605 \cdot 4} \approx 0,041 \cdot 34,25 \approx 1,40425$$
+
+According to the F-distribution table, for $\alpha = 0,05 (5\%)$, critical value for $F(4, 137)$ is between $2,3719$ and $2,4472$. Since $1,40425$ is less than these numbers, explanatory variables are jointly insignificant at the 5\% level. 
+
+To check individual significance of the variables, we should conduct a series of t-tests. To calculate t-statistic we will use the formula:
+
+$$t = \frac{(\hat{\beta_{j}} - \beta_{j})}{se(\hat{\beta_{j})}}$$
+
+Or, since $\beta_{j}$ is normally set to 0 (according to slide 16, lecture 5 part 2):
+
+$$t = \frac{(\hat{\beta_{j}} - \mu_{0})}{se(\hat{\beta_{j})}},$$
+
+Where $\mu_0$ = 0. Therefore, for $dkr$ we have:
+
+$$t = \frac{(0,321 - 0)}{0,201} \approx 1,597$$
+
+According to t-distribution table, for one-sided $\alpha = 0,05 (5\%)$ and $df = 142 - 5 = 137$ critical value is between $1,646$ and $1,660$. Since $1,597$ is less than that (though not very much), $dkr$ variable is individually insignificant.
+\\
+
+For $eps$:
+
+$$t = \frac{(0,043 - 0)}{0,078} \approx 0,551$$
+
+This t-statistic is much less than the critical value, so $eps$ is also individually insignificant.
+\\
+
+For $netinc$:
+
+$$t = \frac{(0,0051 - 0}{0.0041} \approx 1,085$$
+
+This is less the critical value, so $netinc$ is individually insignificant as well.
+
+For $salary$:
+
+$$t = \frac{0,0035 - 0}{0,0022} \approx 1,591$$
+
+This is a bit less than the critical value. Therefore, $salary$ is individually insignificant. As we have established above, so are all of the independent variables in the given model.
+
+(ii) To check if our conclusions should change, we are to conduct an F-test for joint significance of independent variables and then a series of t-tests for individual significance. For the F-test we have (using same formula as above and since q, k and n stay the same):
+
+$$F = \frac{0,0330 / 4}{(1 - 0,0330) / (142 - 5)} = \frac{0,0330 \cdot 137}{0,967 \cdot 4} \approx 0,034 \cdot 34,25 \approx 1,17$$
+
+$F = 1,17$ is still less than the critical value from the F-distribution table (between $2,3719$ and $2,4472$), so the variables are again jointly insignificant.
+
+T-test for $dkr$:
+
+$$t = \frac{(0,327 - 0)}{0,203} \approx 1,61$$
+
+This is still less than the critical value from the t-distribution table (between $1,646$ and $1,660$), though not extremely much. $dkr$ is individually insignificant.
+
+For $eps$:
+
+$$t = \frac{(0,069 - 0}{0,080} \approx 0,86$$
+
+Less than critical value, $eps$ individually insignificant.
+
+For $log(netinc)$:
+
+$$t = \frac{(4,47 - 0}{3,39} \approx 1,398$$
+
+Less than critical value, $log(netinc)$ individually insignificant.
+
+For $log(salary)$:
+
+$$t = \frac{7,24 - 0}{6,31} \approx 1,15$$
+
+Less than critical value, $log(salary)$ also individually insignificant. As we can see, all of the variables are jointly and individually insignificant, so the conclusions from (i) did not change.
+
+(iii) Given the properties of log, this, unfortunately, would not help. We have 0-values for $dkr$, and logarithms are undefined for 0's. We have negative values for $eps$, and logarithms are undefined for negative values. Therefore, logarithms can not be applied to these independent variables.  
+
+(iv) As we have established from our F- and t-tests, in both models independent variables are both jointly and individually insignificant, so the evidence for predictability is very weak. This is also represented by the very small $R^2$ values for both models: $0,0395$ for the first one and $0,0330$ for the second one.
+\\
+
+\textbf{Problem 10 (Wooldridge, Chapter 4, Problem 9)}
+\\
+
+(i) To check individual significance of $educ$ and $age$ at the 5\% level against two-sided alternative, we should conduct two t-tests for these variables. 
+
+For $educ$ we have (formula is the same as in solution to Problem 9 above):
+
+$$t = \frac{11,13 - -0}{5,88} \approx 1,893$$
+
+According to the t-distribution table, for $\alpha = 0,05 (5\%)$ against two-sided alternative the critical value is (given that we have 702 degrees of freedom) around $1,962$. Therefore, t-statistic for $educ$ is less than the critical value (though not very much), and the variable is individually insignificant. 
+
+For $age$:
+
+$$t = \frac{(2,20 - 0)}{1,45} \approx 1,517$$
+
+This is also less than the critical value. Therefore, both independent variables are individually insignificant. 
+
+(ii) To check the joint significance of $educ$ and $age$ variables, we are to conduct an F-test with original formula as an unrestricted one and $\widehat{sleep} = 3586,58 + 0,151 totwrk$ as a restricted one. The formula we will use is:
+
+$$F = \frac{(R^{2}_{ur} - R^{2}_{r}) / q}{(1 - R^{2}_{ur}) / (N - K)}$$
+
+Taken from the slide 24, lecture 5 part 2. Therefore, for the given formulas with $q = 2$, $N = 706$ and $K = 4$ we have:
+
+$$F = \frac{(0,113 - 0,103) / 2}{(1 - 0,113) / (706 - 4)} = \frac{0,010 \cdot 702}{0,887 \cdot 2} \approx 0,011 \cdot 351 \approx 3,861$$
+
+According to the F-stribution table, for $\alpha = 0,05$ and $F(2, 702)$ the critical value is between $2,9957$ and $3,0718$. Since our F-statistic is bigger than the critical value, the variables are indeed jointly significant. 
+
+(iii) Adding $educ$ and $age$ make coefficient of $totwrk$ change from $0,151$ to $0,148$, which is not a significant change. So, adding these variables affect the tradeoff only a little. 
+
+(iv) Both F- and t-tests require homoskedasticity for them to be conducted, so with the equation containing heteroskedasticity we would not be able to proceed with testing joint and individual significance of independent variables using the F- and t-test, while this is what we did in (i) and (ii). 
+
+
+\end{document}
