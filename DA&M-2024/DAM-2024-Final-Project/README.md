@@ -1,1 +1,1 @@
-# HSE-Introduction-into-Data-Analytics-and-Mining-Project
+Data-Analytics-and-Mining-Course-Project
